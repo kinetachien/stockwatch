@@ -1,3 +1,28 @@
-<h1>Handlebar homepage</h1>
-{{ stuff }}
-<p>{{ intent }}</p>
+<h1>{{stock.companyName}} ({{stock.symbol}})</h1>
+<br/>
+
+<strong>Latest Price: </strong>${{stock.latestPrice }}<br/>
+<strong>Previous Close: </strong>${{stock.previousClose}}<br/>
+<strong>Percent Change: </strong>{{stock.changePercent}}<br/>
+<strong>YTD Change: </strong>{{stock.ytdChange }}<br/>
+<strong>52wk Low: </strong>{{stock.week52Low  }}<br/>
+<strong>52wk High: </strong>{{stock.week52High  }}<br/>
+<hr>
+<strong>Market Cap: </strong>{{stock.marketCap}}<br/>
+<strong>P/E Ratio: </strong>{{stock.peRatio}}<br/>
+
+<!-- This is using financialmodelingprep API -->
+
+<!--
+{{#each stock}} 
+    {{#each this}} {{@key}} | {{this}} <br/>{{/each}} 
+    <hr/>
+{{/each}}
+-->
+<!-- This is using iexapis API -->
+<!--
+ {{#each stock}}
+    {{@key}} | {{this}} <br/>
+{{/each}}
+{{log stock}} 
+-->
